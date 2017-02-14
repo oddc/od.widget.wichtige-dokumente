@@ -1,0 +1,18 @@
+<od-widget widget-title="{{ DetailPageController.service.getSelectedDocument().title || DetailPageController.service.getSelectedDocument().filename || 'Wichtige Dokumente' }}"
+           template="tpl-small-header"
+           icon="res/img/icon.svg">
+    <od-widget-header></od-widget-header>
+    <od-widget-content>
+        <div class="detail-page-content">
+            <div class="document-meta-data">
+                <img src="res/img/ico_file.svg">
+                <div class="document-data">
+                    <div>Dateityp: {{ DetailPageController.service.getSelectedDocument().mimeType }}</div>
+                    <div>Dateigröße: {{ DetailPageController.service.getSelectedDocument().sizeInBytes | ReadableFilesize }}</div>
+                </div>
+            </div>
+            <div class="document-description" ng-bind-html="DetailPageController.service.getSelectedDocument().description"></div>
+            <a class="btn btn-primary" href="{{ DetailPageController.service.getSelectedDocument().fullPath }}" download="{{ DetailPageController.service.getSelectedDocument().filename }}">Download</a>
+        </div>
+    </od-widget-content>
+</od-widget>

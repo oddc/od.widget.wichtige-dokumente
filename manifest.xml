@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget id="od.widget.wichtige-dokumente" builder="2.3.1">
+    <information>
+        <name lang="de-DE">Wichtige Dokumente</name>
+        <version>1.0.2</version>
+        <author>
+            <company>opta data Gruppe</company>
+            <telephone>0201 / 3 19 60</telephone>
+            <fax>0201 89074499</fax>
+            <email>service@optadata-gruppe.de</email>
+            <web>http://www.optadata-gruppe.de</web>
+        </author>
+        <developer>
+            <name>Sven Strgar</name>
+            <email>s.strgar@optadata-gruppe.de</email>
+        </developer>
+        <summary lang="de-DE">
+            <image>/res/img/small.png</image>
+            <text type="textile">
+                Dieses Widget zeigt Ihnen alle wichtigen Dokumente an und bietet Ihnen eine Suchfunktion.
+           </text>
+        </summary>
+        <description lang="de-DE">
+            <image>/res/img/big.png</image>
+            <text type="textile">
+                Dieses Widget zeigt Ihnen alle wichtigen Dokumente an und bietet Ihnen eine Suchfunktion.
+            </text>
+        </description>
+        <tags>kostenlos,opta data</tags>
+        <appearance>
+            <text-appearance>light</text-appearance>
+            <main-color>#3ABB27</main-color>
+            <text-color>#FFFFFF</text-color>
+        </appearance>
+    </information>
+    <ressources>
+        <templates lang="de-DE">
+            <template cols="1" rows="1" markup="/src/app.html">
+                <styles>
+                    <style>/src/styles/widget.css</style>
+                </styles>
+                <scripts>
+                    <script>/src/app.js</script>
+                    <script>/src/filters/readable-bytes.filter.js</script>
+                    <script>/src/services/document.service.js</script>
+                    <script>/src/components/index-page/index-page.component.js</script>
+                    <script>/src/components/detail-page/detail-page.component.js</script>
+                    <script>/src/components/document-list/document-list.component.js</script>
+                </scripts>
+            </template>
+        </templates>
+        <services>
+            <service environment="DEV" type="restful" name="getDocuments" url="http://crm-test.optadata.com:8080/odone.business/documents/type/document" method="GET"></service>
+            <service environment="DEV" type="restful" name="getDocument" url="http://crm-test.optadata.com:8080/odone.business/documents/{id}" method="GET"></service>
+            <service environment="PROD" type="restful" name="getDocuments" url="https://biz.optadata-one.de/documents/type/document" method="GET"></service>
+            <service environment="PROD" type="restful" name="getDocument" url="https://biz.optadata-one.de/documents/{id}" method="GET"></service>
+        </services>
+    </ressources>
+</widget>
+

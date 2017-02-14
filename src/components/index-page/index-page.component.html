@@ -1,0 +1,24 @@
+<od-widget widget-title="Wichtige Dokumente" template="tpl-small-header" icon="res/img/icon.svg">
+    <od-widget-header>
+        <div class="col-md-12" ng-if="!IndexPageController.service.isLoadingDocuments() && IndexPageController.service.getDocuments().length">
+            <form>
+                <input type="text" class="form-control" ng-model="IndexPageController.searchTerm" placeholder="Alle Dokumente durchsuchen..." autocomplete="off">
+            </form>
+        </div>
+    </od-widget-header>
+    <od-widget-content nospacing>
+        <div class="panel-spacing" ng-if="IndexPageController.service.isLoadingDocuments()">
+            <od-loader></od-loader>
+        </div>
+        <od-scrollbar ng-if="!IndexPageController.service.isLoadingDocuments()">
+            <document-list ng-if="!IndexPageController.searchTerm"
+                           on-click-on-document="IndexPageController.onClickOnDocument($document)"
+                           caption="Wichtige Dokumente"
+                           documents="IndexPageController.service.getImportantDocuments()"></document-list>
+            <document-list on-click-on-document="IndexPageController.onClickOnDocument($document)"
+                           caption="alle Dokumente"
+                           documents="IndexPageController.service.getDocuments()"
+                           search-term="IndexPageController.searchTerm"></document-list>
+        </od-scrollbar>
+    </od-widget-content>
+</od-widget>

@@ -1,0 +1,88 @@
+ui-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+}
+
+#widget.index > ui-view.ng-enter {
+    animation:slideInLeft .5s both;
+}
+
+#widget.index > ui-view.ng-leave {
+    animation:slideOutRight .5s both;
+}
+
+#widget.detail > ui-view.ng-enter {
+    animation:slideInRight .5s both;
+}
+
+#widget.detail > ui-view.ng-leave {
+    animation:slideOutLeft .5s both;
+}
+
+.list {
+    margin-bottom: 10px
+}
+
+.document-list-caption {
+    margin: 10px 0;
+}
+
+.list ul.list-group li.list-group-item .document-item {
+    width: 100%;
+}
+
+.list ul.list-group li.list-group-item .document-item .document-item-icon,
+.list ul.list-group li.list-group-item .document-item .document-item-download,
+.list ul.list-group li.list-group-item .document-item .document-item-info {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+.document-item-caption {
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 20px;
+    line-height: 20px;
+    vertical-align: middle;
+    padding: 0 10px;
+    width: calc(100% - 69px);
+}
+
+.detail-page-content {
+    height: 326px;
+}
+
+.detail-page-content .document-meta-data {
+    width: 100%;
+    height: 64px;
+}
+
+.detail-page-content .document-meta-data img {
+    float: left;
+    width: 64px;
+    height: 64px;
+}
+
+.detail-page-content .document-meta-data .document-data {
+    padding-left: 10px;
+    float: left;
+    width: calc(100% - 64px);
+}
+
+.detail-page-content .document-meta-data .document-data > div {
+    height: 32px;
+}
+
+.detail-page-content .document-description {
+    height: 220px;
+    padding: 10px 0;
+}
+
+.detail-page-content a.btn.btn-primary {
+    width: 100%;
+}

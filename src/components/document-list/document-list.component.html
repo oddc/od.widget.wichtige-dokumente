@@ -1,0 +1,35 @@
+<div class="text-center document-list-caption">
+    <span class="badge">{{ DocumentListController.caption }}</span>
+</div>
+
+<div class="list">
+    <ul class="list-group">
+        <li ng-repeat="document in DocumentListController.documents | filter: DocumentListController.searchTerm"
+            class="list-group-item item-hover">
+            <div class="document-item">
+                <div class="document-item-icon">
+                    <img src="res/img/ico_file.svg">
+                </div>
+
+                <div class="document-item-caption"
+                     ng-click="DocumentListController.onClickOnDocument({ $document: document })">{{ document.title || document.filename || '(Dokument)' }}</div>
+
+                <div class="document-item-download">
+                    <a ng-click="DocumentListController.onDownloadClick($event)" href="{{ document.fullPath }}">
+                        <img src="res/img/ico_download.svg">
+                    </a>
+                </div>
+
+                <div class="document-item-info">
+                    <img src="res/img/ico_info.svg">
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="panel-spacing" ng-if="!DocumentListController.documents.length">
+    <div class="alert alert-warning">
+        <span class="icon icon-info"></span> Es sind keine Dokumente in dieser Kategorie hinterlegt.
+    </div>
+</div>
