@@ -2,7 +2,7 @@
 <widget id="od.widget.wichtige-dokumente" builder="2.3.2">
     <information>
         <name lang="de-DE">Wichtige Dokumente</name>
-        <version>1.0.3</version>
+        <version>1.0.4</version>
         <author>
             <company>opta data Gruppe</company>
             <telephone>0201 / 3 19 60</telephone>
@@ -54,6 +54,8 @@
             <service environment="DEV" type="restful" name="getDocument" url="http://crm-test.optadata.com:8080/odone.business/documents/{id}" method="GET"></service>
             <service environment="PROD" type="restful" name="getDocuments" url="https://biz.optadata-one.de/documents/type/document" method="GET"></service>
             <service environment="PROD" type="restful" name="getDocument" url="https://biz.optadata-one.de/documents/{id}" method="GET"></service>
+            <service environment="TEST" type="restful" name="getDocuments" url="https://biz.test.optadata-one.de/documents/type/document" method="GET"></service>
+            <service environment="TEST" type="restful" name="getDocument" url="https://biz.test.optadata-one.de/documents/{id}" method="GET"></service>
         </services>
     </ressources>
 </widget>
