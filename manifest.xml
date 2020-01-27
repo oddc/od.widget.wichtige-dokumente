@@ -2,12 +2,13 @@
 <widget id="od.widget.wichtige-dokumente" builder="3.0.0" icon="/res/img/icon.png">
     <information>
         <name lang="de-DE">Wichtige Dokumente</name>
-        <version>1.0.7</version>
+        <version>1.0.8</version>
         <author>
+            <name>opta data digital communication GmbH</name>
             <company>opta data Gruppe</company>
             <telephone>0201 / 3 19 60</telephone>
             <fax>0201 89074499</fax>
-            <email>service@optadata-gruppe.de</email>
+            <email>od1-support@optadata.de</email>
             <web>http://www.optadata-gruppe.de</web>
         </author>
         <developer>
